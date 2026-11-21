@@ -9,16 +9,7 @@ app.use(helmet.frameguard({ action: 'deny' }));
 
 app.use(helmet.xssFilter());
 
-
-app.use(
-  helmet.contentSecurityPolicy({
-    directives: {
-      defaultSrc: ["'self'"],
-      scriptSrc: ["'self'"],
-      styleSrc: ["'self'"],
-    },
-  })
-);
+app.use(helmet.noSniff());
 
 
 
